@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #0F9D58;
+    --primary-color: #13cf23;
     --background-color: #f0f3f7;
     --secon-color: #9da2ad;
     --grey: #7a7a7b;
@@ -686,4 +686,37 @@ section {
     .h-xs {
         display: none;
     }
+
+.contact-label { font-weight: var(--weight-bold); }
+
+.contact-number {
+  color: var(--gold-crayola);
+  max-width: max-content;
+  margin-inline: auto;
+}
+
+.hover-underline {
+    position: relative;
+    max-width: max-content;
+  }
+  
+  .hover-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    border-block: 1px solid var(--gold-crayola);
+    transform: scaleX(0.2);
+    opacity: 0;
+    transition: var(--transition-2);
+  }
+  
+  .hover-underline:is(:hover, :focus-visible)::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  
+  .contact-number::after { bottom: -5px; }
 }
